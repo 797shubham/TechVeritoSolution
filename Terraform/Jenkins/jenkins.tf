@@ -11,6 +11,9 @@ resource "aws_instance" "jenkins_host" {
    sudo yum install jenkins -y
    sudo dnf update -y
    sudo dnf install git -y
+   sudo yum install -y yum-utils
+   sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
+   sudo yum -y install terraform
    sudo systemctl start jenkins
    sudo systemctl enable jenkins
   EOF
