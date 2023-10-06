@@ -9,6 +9,8 @@ resource "aws_instance" "jenkins_host" {
    sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
    sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
    sudo yum install jenkins -y
+   sudo dnf update -y
+   sudo dnf install git -y
    sudo systemctl start jenkins
    sudo systemctl enable jenkins
   EOF
