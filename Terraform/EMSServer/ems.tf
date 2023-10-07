@@ -18,5 +18,9 @@ resource "aws_instance" "ems_host" {
   tags = {
     "Name" = var.servername
   }
+}
 
+resource "aws_key_pair" "generated_key2" {
+  key_name   = var.key_pair_name
+  public_key = file("key.pub")
 }
