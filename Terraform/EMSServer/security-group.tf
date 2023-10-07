@@ -1,11 +1,11 @@
 # Security Group
 variable "ingressports" {
   type    = list(number)
-  default = [8080, 22]
+  default = [8080, 22, 3000, 5432]
 }
 
-resource "aws_security_group" "jenkins-sg" {
-  name        = "Allow web traffic1"
+resource "aws_security_group" "ems-sg" {
+  name        = "Allow ems traffic"
   description = "inbound ports for ssh and standard http and everything outbound"
   dynamic "ingress" {
     for_each = var.ingressports
@@ -23,9 +23,9 @@ resource "aws_security_group" "jenkins-sg" {
     to_port     = 0
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
-  }
+  }s
   tags = {
-    "Name"      = "Jenkins-sg"
+    "Name"      = "EMS-sg"
     "Terraform" = "true"
   }
 }
