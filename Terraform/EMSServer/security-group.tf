@@ -23,7 +23,7 @@ resource "aws_security_group" "ems-sg" {
     to_port     = 0
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
-  }s
+  }
   tags = {
     "Name"      = "EMS-sg"
     "Terraform" = "true"
