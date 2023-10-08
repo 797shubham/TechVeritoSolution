@@ -4,4 +4,4 @@ ami         = "ami-0d406e26e5ad4de53"
 instance    = "t2.micro"
 servername  = "ems-server-1"
 size        = 20
-key_pair_name = pub-key
+key_pair_name = "pub-key"
