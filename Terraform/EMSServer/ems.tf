@@ -2,6 +2,7 @@ resource "aws_instance" "ems_host" {
   ami             = var.ami
   instance_type   = var.instance
   security_groups = [aws_security_group.ems-sg.name]
+  key_name        = aws_key_pair.generated_key2.id
   user_data = <<EOF
   #!/bin/bash
   #install docker
