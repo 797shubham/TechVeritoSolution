@@ -24,3 +24,8 @@ variable "servername" {
 variable "size" {
   description = "volume size"
 }
+
+
+variable "key_pair_name" {
+  description = "key name"
+}
